@@ -43,7 +43,8 @@ class User {
  //* Test Suite
 
 describe(`${User.name} Class`,() => {
-    it('first name defaults to empty', () => {
+    describe('default values', () => {
+        it('first name defaults to empty', () => {
         // arrange
         const data = { firstName: null };
 
@@ -52,5 +53,29 @@ describe(`${User.name} Class`,() => {
 
         //assert
         expect(model.firstName).toBe('');
-    }); 
+        }); 
+
+        it('last name defaults to empty', () => {
+            // arrange
+            const data = { lastName: null };
+    
+            //act
+            const model = new User(data); 
+    
+            //assert
+            expect(model.lastName).toBe('');         
+        });
+
+        it('middle name defaults to empty', () => {
+        // arrange
+        const data = { middleName: null };
+
+        //act
+        const model = new User(data); 
+
+        //assert
+        expect(model.middleName).toBe('');
+        });
+   });
 });
+
