@@ -79,3 +79,33 @@ describe(`${User.name} Class`,() => {
    });
 });
 
+// Unit Testing: Setting up data with beforeEach
+
+describe(`${User.name} Class`, () => {
+    let model;
+
+    beforeEach(() => {
+        model = new User();
+        console.log(`Dylan`);
+    });
+
+    describe('first name defaults to empty', () => {
+      it('first name defaults to empty', () => {
+        //assert
+        console.log(1)
+        expect(model.firstName).toBe('');
+      });
+     
+      it ('last name defaults to empty', () => {
+           //assert
+           console.log(2)
+           expect(model.lastname).toBe('');        
+      });
+
+      it ('middle name defaults to empty', () => {
+           // assert
+           console.log(3)
+           expect(model.middleName).toBe('');
+      });
+   });
+});
