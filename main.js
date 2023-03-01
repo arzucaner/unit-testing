@@ -85,8 +85,7 @@ describe(`${User.name} Class`, () => {
     let model;
 
     beforeEach(() => {
-        model = new User();
-        console.log(`Dylan`);
+        model = new User();        
     });
 
     describe('first name defaults to empty', () => {
@@ -108,4 +107,34 @@ describe(`${User.name} Class`, () => {
            expect(model.middleName).toBe('');
       });
    });
+
+   describe('full name', () => {
+      beforeEach(() => {
+        model = new User({ firstName: 'Arzu', lastName: 'Caner' 
+      });
+
+      it('middle initial when middleName is defined with first and last', () => {
+        //arrange
+        model.middleName = 'guney';
+
+        //act
+        const result = model.fullName;
+
+        //assert
+        expect(result).toBe(`${model.firstName} ${model.middleName[0]}. ${model.lastName}`);
+
+       });
+
+       it('when no middle name return just first and last', () => {
+        //arrange
+        model.middleName = '';
+
+        //act
+        const result = model.fullName;
+
+        //assert
+        expect(result).toBe(`${model.firstName} ${model.lastName}`);
+
+        });
+    });
 });
