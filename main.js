@@ -138,3 +138,29 @@ describe(`${User.name} Class`, () => {
         });
     });
 });
+
+// Test Suite
+describe(`${User.name} Class`, () => {
+    let model;
+
+    beforeEach(() => {
+        model = new User();
+    });
+
+    describe('say my name', () => {
+        it('alerts the full name of user', () => {
+            //arrange
+            model.firstName = "Arzu";
+            model.lastName = "Caner";
+            spyOn(window, 'alert');
+
+            //act
+            model.sayMyName();
+
+            //assert
+            expect(window.alert).toHaveBeenCalled();
+            expect(window.alert).toHaveBeenCalledWith('Arzu Caner');
+        })
+    });
+    
+});
