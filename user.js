@@ -17,6 +17,16 @@ class User {
     }
 
     sayMyName() {
-        window.alert(this.fullName);
+        alert(this.fullName);
     }
+
+getCodeName() {
+    const isATestingGod = confirm('Are you a testing god?');
+
+    if(isATestingGod) {
+        return 'TESTING GOD!'
+    } else {
+        return 'Scrub skipping tests in his best friend's ride!`;
+    }
+  }
 }

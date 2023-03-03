@@ -166,9 +166,8 @@ describe(`${User.name} Class`, () => {
 });
 
 // Test Suite 2
-describe(`${User.name} Class, () => {
+describe(`${User.name} Class`, () => {
     let model;
-});
 
     beforeEach(() => {
         model = new User();
@@ -177,7 +176,7 @@ describe(`${User.name} Class, () => {
     describe('get code name', () => {
         it('is a testing god when confirmed', () => {
             // arrange
-            spyOn(window, 'confirm).and.returnValue(true);
+            spyOn(window, 'confirm').and.returnValue(true);
 
             // act
             const result = model.getCodeName();
@@ -194,7 +193,7 @@ describe(`${User.name} Class, () => {
             const result = model.getCodeName();
 
             //assert
-            expect(result).tobe('Scrub skipping tests in his best friend's ride!`);
+            expect(result).toBe('Scrub skipping tests in his best friend's ride!`);
         });
 
         it('asks a user if they are a testing god', () => {
@@ -205,8 +204,9 @@ describe(`${User.name} Class, () => {
             const result = model.getCodeName();
 
             //assert
-            expect(window.confirm).toHaveBeenCalledWith(`Are you a testing god`);
+            expect(window.confirm).toHaveBeenCalledWith(`Are you a testing god?`);
         });
-
-    
+    });
+  }); 
+});
 
