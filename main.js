@@ -193,7 +193,7 @@ describe(`${User.name} Class`, () => {
             const result = model.getCodeName();
 
             //assert
-            expect(result).toBe('Scrub skipping tests in his best friend's ride!`);
+            expect(result).toBe(`Scrub skipping tests in his best friend's ride!`);
         });
 
         it('asks a user if they are a testing god', () => {
@@ -209,4 +209,41 @@ describe(`${User.name} Class`, () => {
     });
   }); 
 });
+
+// Unit Testing: Mocks
+
+// Test Suite
+describe(`${User.name} Class`, () => {
+    let model;
+    let mockUserService;
+
+    beforeEach(() => {
+        mockUserService = {
+            lastId: null,
+            user: {},
+            getUserById(id) {
+                this.lastId = id;
+
+                return this.user;                
+            }
+        };
+        const data = { firstName: 'Arzu', middleName: 'Guney', LastName: 'Caner', id: 1 };
+        model = new User(data, mockUserService);
+    });
+
+    describe('getMyFullUserData', () => {
+        it('gets user data by id', async () => {
+            //arrange
+            mockUserService.lastId = null;
+            mockUserService.user = new User(
+                {firstName: 'Mazhar', middleName: 'Fuat', lastName: 'Ozkan', id: 2 }
+                )
+            // act
+            const result = await model.getMyFullUserData();
+            // assert
+            expect(mockUserService.lastId).toBe(1);
+        });        
+    });
+});
+
 
