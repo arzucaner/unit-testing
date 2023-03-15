@@ -1,0 +1,8 @@
+body { overflow-y: scroll;}
+
+.jasmine_html-reporter {background-color: #eee; padding: 5px; margin: -8px; font-size: 11px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+.jasmine_html-reporter a { text-decoration: none;}
+.jasmine_html-reporter a:hover {text-decoration: underline;}
+.jasmine_html-reporter p, .jasmine_html-reporter h1, .jasmine_html-reporter h2, .jasmine_html-reporter h3, .jasmine_html-reporter h4, .jasmine_html-reporter h5,
+.jasmine_html-reporter h6 {margin: 0; line-height: 14px; }
+.jasmine_html-reporter .jasmine-banner, .jasmine_html-reporter .jasmin-symbol-summary, .jasmine_html-reporter .jasmin-summary, .jasmine_html-reporter .jasmine-result-message, .jasmine_html-reporter .jasmine-spec .jasmin-description, .jasmine_html-reporter .jasmine-spec-detail .jasmine-description, .jasmine_html-reporter .jasmine-alert .jasmine-bar, .jasmine_html-reporter .jasmine-stack-trace { padding-left: 9px; padding-right: 9px; } 
